@@ -1,0 +1,10 @@
+.wrapper{
+    margin: 16px auto;
+    width: 75%;
+}
+.listGroupItem{
+    display: flex;
+}
+.deleteBtn{
+    margin-left: auto;
+}
