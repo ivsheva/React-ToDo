@@ -43,7 +43,11 @@ const App = () => {
         style={{ height: "40px" }}
       />
       <Button onClick={handleClick} />
-      <ListGroup items={listItems} onDeleteItem={handleDeleteItem} />
+      <ListGroup
+        setItems={setListItems}
+        items={listItems}
+        onDeleteItem={handleDeleteItem}
+      />
     </div>
   );
 };

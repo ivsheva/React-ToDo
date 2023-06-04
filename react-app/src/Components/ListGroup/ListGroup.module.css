@@ -5,6 +5,8 @@
 .listGroupItem{
     display: flex;
 }
-.deleteBtn{
+.buttons{
+    display: flex;
     margin-left: auto;
+    column-gap: 20px;
 }
