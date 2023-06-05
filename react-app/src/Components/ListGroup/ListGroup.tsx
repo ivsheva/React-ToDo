@@ -55,17 +55,22 @@ const ListGroup = ({ items, onDeleteItem, setItems }: Props) => {
   }
 
   function handleSave(index: number) {
-    const newItems = [...items];
-    newItems[index] = editedValues[index];
-    setItems(newItems); // Перезаписываем значение items
+    const editedValue = editedValues[index].trim();
+    if (editedValue === "") {
+      deleteItem(index); // Удаление элемента, если значение пустое
+    } else {
+      const newItems = [...items];
+      newItems[index] = editedValue;
+      setItems(newItems); // Перезаписываем значение items
 
-    const newEditedItems = [...editedItems];
-    newEditedItems[index] = !newEditedItems[index];
-    setEditedItems(newEditedItems); // Обновляем следущее состоянием редактируется ли item?
+      const newEditedItems = [...editedItems];
+      newEditedItems[index] = !newEditedItems[index];
+      setEditedItems(newEditedItems); // Обновляем состояние редактируется ли item?
 
-    const newEditedValues = [...editedValues];
-    newEditedValues[index] = ""; // Сброс значения editedValues
-    setEditedValues(newEditedValues);
+      const newEditedValues = [...editedValues];
+      newEditedValues[index] = ""; // Сброс значения editedValues
+      setEditedValues(newEditedValues);
+    }
   }
 
   function handleInputChange(
