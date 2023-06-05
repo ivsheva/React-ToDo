@@ -20,7 +20,7 @@ const App = () => {
   }
 
   function handleDeleteItem(index: number) {
-    const updatedListItems = listItems.filter((item, idx) => idx !== index);
+    const updatedListItems = listItems.filter((_item, idx) => idx !== index);
     setListItems(updatedListItems);
   }
 
